@@ -18,4 +18,4 @@ To deploy this project run
 ## Demo
 
 Insert gif or link to demo
-<a href="file:///C:/Users/bkcja/Desktop/mini-projects/infinite-scroll/index.html"></a>
+<a href="file:///C:/Users/bkcja/Desktop/mini-projects/infinite-scroll/index.html">infinte scroll</a>
