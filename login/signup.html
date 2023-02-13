@@ -1,81 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
         }
-        #login-container{
-          width: 100%;
-          height: 100vh;
-          background: rgb(82, 168, 204);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      
+
+        #login-container {
+            width: 100%;
+            height: 100vh;
+            background: rgb(82, 168, 204);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
-        .form-container{
-            
-           width: 300px;
-           margin: auto;
-          background: #fff;
-           padding: 20px;
-           display: flex;
-           flex-direction: column ;
-           gap: 10px;
-           border-radius: 10px;
-           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .form-container {
+
+            width: 300px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
-        .form-container>h2{
+
+        .form-container>h2 {
             text-align: center;
             margin: 0;
-            
+
         }
-        .form-container>p{
+
+        .form-container>p {
             width: 100%;
             text-align: center;
         }
-        .input-group{
+
+        .input-group {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        .input-group>span{
+
+        .input-group>span {
             font-weight: bold;
         }
-        .input-group>a{
+
+        .input-group>a {
             margin: 0;
             text-align: end;
             font-weight: bold;
             text-decoration: none;
         }
-        .inp{
+
+        .inp {
             width: 100%;
             border-bottom: 1px solid black;
             display: flex;
             flex-direction: row;
-            
+
         }
+
         .inp>input {
-            
-           height: 25px;
-           outline: none;
-           font-size: 16px;
-           border: none;
-           
+            width: 100%;
+            height: 25px;
+            outline: none;
+            font-size: 16px;
+            border: none;
+
         }
-        #form{
+
+        #form {
             display: flex;
             gap: 20px;
             flex-direction: column;
         }
-        #login-btn{
+
+        #signup-btn {
             height: 30px;
             outline: none;
             cursor: pointer;
@@ -86,20 +98,22 @@
             font-size: 16px;
             font-weight: bold;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
     </style>
 </head>
+
 <body>
     <div id="login-container">
         <div class="form-container">
             <h2>Sign Up</h2>
-            <form action="" id="form">
+            <form action="" id="form" onsubmit="Signup(event)">
                 <div class="input-group">
                     <span>Full Name</span>
                     <div class="inp">
-                        <input type="text" placeholder="Full Name" name="" id="email" required>
+                        <input type="text" placeholder="Full Name" name="" id="name" required>
                     </div>
                 </div>
                 <div class="input-group">
@@ -111,20 +125,68 @@
                 <div class="input-group">
                     <span>Password</span>
                     <div class="inp">
-                        <input type="email" placeholder="Password" name="" id="password" required>
+                        <input type="password" placeholder="Password" name="" id="password" required>
                     </div>
                 </div>
                 <div class="input-group">
                     <span>Confirm Password</span>
-                   <div class="inp">
-                    <input type="password" placeholder="Confirm Password" name="" id="password1" required>
-                   </div>
+                    <div class="inp">
+                        <input type="password" placeholder="Confirm Password" name="" id="password1" required>
+                    </div>
 
                 </div>
-                <button id="login-btn" onclick="Login(e)">Sign Up</button>
+                <input type="submit" name="" id="signup-btn">
             </form>
+            <span id="err" style="color:red; text-align: center;"></span>
             <p>Allready have an account? <a href="login.html">Login</a></p>
         </div>
     </div>
 </body>
+<script>
+    let signup = document.getElementById("signup-btn")
+    async function Signup(e) {
+        e.preventDefault();
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let password1 = document.getElementById("password1").value;
+        signup.innerHTML = "loading..."
+        // let res = await fetch(`http://localhost:4500/users?email=${email}`)
+        // let data = await res.json();
+        // if (data.length == 0) {
+        //     if (password != password1) {
+        //         document.getElementById('err').innerHTML = "Password not matched"
+        //         document.getElementById("password").value = ""
+        //         document.getElementById("password1").value = ""
+        //         document.getElementById("password").focus()
+        //     } else if (password.length < 8) {
+        //         document.getElementById('err').innerHTML = "Password must contain atleast 8 charachers"
+        //     } else {
+        //         let details = {
+        //             name: name,
+        //             email: email,
+        //             password: password
+        //         }
+        //         let res = await fetch(`http://localhost:4500/users`, {
+        //             method: "POST",
+        //             mode: "cors",
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             },
+        //             body: JSON.stringify(details)
+        //         })
+        //         let data = await res.json();
+        //         console.log(data)
+        //         alert("Account created successfully")
+        //         window.location.href="login.html"
+               
+        //     }
+
+        // }else{
+        //     document.getElementById('err').innerHTML = "User Allready exist"
+        // }
+    }
+
+</script>
+
 </html>

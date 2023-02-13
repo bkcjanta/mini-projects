@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #navbar{
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            
+            background: rgb(82, 168, 204);
+    
+        }
+        .logo{
+            width: 30%;
+            padding: 15px;
+        }
+        .menu-item{
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu-item>a{
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .menu-item>a:hover{
+            background: rgb(54, 139, 176);
+        }
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+</body>
+<script type="module" >
+    import {navbar} from "./navbar.js"
+
+document.getElementById("nav").innerHTML=navbar;
+</script>
+</html>
