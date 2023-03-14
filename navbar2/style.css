@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+/* Navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+
+
+#humberger>.line {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#humberger {
+    display: none;
+    cursor: pointer;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-left: 10px;
+    background-color: #fff;
+    display: none;
+}
+
+
+
+
+#navbar-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+}
+
+#logo1 {
+    width: 10%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#logo2 {
+    width: 10%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    display: none;
+}
+
+
+
+.nav-link {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.nav-link a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-link>a:hover {
+    background-color: #ddd;
+    color: black;
+
+}
+
+.nav-link>a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav-link>a.active:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#nav-search {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 2rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#nav-search>input {
+    width: 100%;
+    padding: 0.5rem .5rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+}
+
+#nav-search>button {
+
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    position: relative;
+    top: 0px;
+    right: 15px;
+
+
+}
+
+#nav-search>button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#nav-search>input:focus {
+    outline: white;
+}
+
+.sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    z-index: 3;
+    background-color: #111;
+    transition: .4s;
+    padding-top: 10px 60px 60px 60px;
+
+}
+
+.sidebar-link {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    transition: 0.3s;
+
+}
+
+.sidebar-link>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar-link>a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar-logo {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.logo {
+    font-size: 40px;
+    object-fit: cover;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+
+    #humberger {
+        display: block;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    #navbar-menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #nav-search {
+        width: 60%;
+    }
+
+    #logo1 {
+        display: none;
+    }
+
+    #logo2 {
+        display: block;
+    }
+
+
+}
+
+@media screen and (max-width: 720px) {
+    #nav-search {
+        display: none;
+    }
+
+    .profile {
+        display: block;
+    }
+}

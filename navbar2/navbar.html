@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+</body>
+<div id="navbar">
+    <div id="navbar-menu">
+        <!-- humberger -->
+        <div id="humberger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="" id="logo1">
+            logo
+        </div>
+        <!-- Search box -->
+
+        <!-- <div id="nav-search">
+            <input placeholder="Search" type="text" name="" id="inp-search">
+            <button id="search-btn">Search</button>
+        </div> -->
+
+        <!-- nav links -->
+        <div class="nav-link">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Login</a>
+        </div>
+        <div class="" id="logo2">
+            logo
+        </div>
+        <!-- profile -->
+        <div class="profile"></div>
+    </div>
+</div>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <div class="logo" id="logo">
+            &times
+        </div>
+    </div>
+    <div class="sidebar-link">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </div>
+</div>
+<!-- main content -->
+<div id="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Heading</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const open = () => {
+        console.log("object")
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.left = 0;
+        sidebar.style.width = "250px"
+    }
+    const close = () => {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.left = "-200px";
+        sidebar.style.width = 0
+    }
+
+    document.getElementById('humberger').addEventListener('click', open);
+    document.getElementById('logo').addEventListener('click', close);
+</script>
+
+</html>
